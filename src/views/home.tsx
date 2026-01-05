@@ -1,171 +1,257 @@
-import React from 'react';
-import '../app.css';
+import { useState, useEffect } from 'react';
+import './home.css';
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentReview, setCurrentReview] = useState(0);
+
+  const heroImages = [
+    '/img/montanaYrio/1.jpg',
+    '/img/montanaYrio/5.jpg',
+    '/img/montanaYrio/10.jpg',
+    '/img/nieve/nieve1.jpg',
+    '/img/nieve/nieve5.jpg',
+    '/img/parquizado/1.jpg',
+    '/img/parquizado/10.jpg',
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
+  };
+
+  const reviews = [
+    {
+      name: 'María González',
+      avatar: 'MG',
+      stars: 5,
+      text: 'Excelente lugar para desconectar y disfrutar de la naturaleza. Las cabañas son muy cómodas y la vista es espectacular. El río está a pocos pasos y la atención es impecable. Muy recomendable para familias.',
+      date: 'Hace 2 semanas'
+    },
+    {
+      name: 'Juan Rodríguez',
+      avatar: 'JR',
+      stars: 5,
+      text: 'Hermoso lugar, ideal para pasar unos días en familia. Las cabañas tienen todo lo necesario, muy limpias y bien equipadas. El entorno natural es increíble. Sin duda volveremos.',
+      date: 'Hace 1 mes'
+    },
+    {
+      name: 'Laura Sánchez',
+      avatar: 'LS',
+      stars: 5,
+      text: 'Lugar perfecto para desconectar. Las vistas son maravillosas, el río es precioso y las montañas te dejan sin palabras. Las cabañas son acogedoras y la paz que se respira es única. Totalmente recomendable.',
+      date: 'Hace 3 semanas'
+    },
+    {
+      name: 'Carlos Fernández',
+      avatar: 'CF',
+      stars: 5,
+      text: 'Una experiencia inolvidable. El contacto con la naturaleza es total. Las instalaciones son excelentes y el trato muy cálido. Ideal para escaparse del ruido de la ciudad.',
+      date: 'Hace 1 semana'
+    },
+    {
+      name: 'Ana María López',
+      avatar: 'AL',
+      stars: 5,
+      text: 'Simplemente maravilloso. La ubicación es privilegiada, rodeado de montañas y con el río a metros. Las cabañas son hermosas y súper equipadas. Un lugar para volver una y otra vez.',
+      date: 'Hace 2 meses'
+    },
+    {
+      name: 'Roberto Silva',
+      avatar: 'RS',
+      stars: 5,
+      text: 'Perfecto para desconectar y reconectar con la naturaleza. La tranquilidad del lugar es incomparable. Las cabañas tienen todo lo necesario y más. La atención de los dueños es excelente.',
+      date: 'Hace 3 semanas'
+    }
+  ];
+
+  const nextReview = () => {
+    setCurrentReview((prev) => (prev + 1) % reviews.length);
+  };
+
+  const prevReview = () => {
+    setCurrentReview((prev) => (prev - 1 + reviews.length) % reviews.length);
+  };
+
   return (
     <div className="home">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <h1 className="hero-title">Blanco Escalada</h1>
-            <p className="hero-subtitle">
-              Tu refugio en la montaña. Donde la naturaleza se encuentra con el descanso.
-            </p>
-            <p className="hero-description">
-              Desconéctate del mundo y reconéctate contigo mismo en nuestras cabañas 
-              junto al río, rodeadas de montañas y naturaleza pura.
-            </p>
-            <button className="cta-button">Descubre nuestras cabañas</button>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="navbar-container">
+          <div className="navbar-menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-        </div>
-      </section>
-
-      {/* Experiencia Section */}
-      <section className="experience-section">
-        <div className="container">
-          <h2 className="section-title">Una Experiencia Auténtica</h2>
-          <p className="section-description">
-            En Blanco Escalada te ofrecemos mucho más que un lugar para descansar. 
-            Cada momento está diseñado para que vivas la montaña en su forma más pura.
-          </p>
           
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🏔️</div>
-              <h3 className="feature-title">Naturaleza Pura</h3>
-              <p className="feature-text">
-                Rodeado de montañas y senderos para explorar
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">🌊</div>
-              <h3 className="feature-title">Junto al Río</h3>
-              <p className="feature-text">
-                El sonido del agua acompañará tu descanso
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">🛏️</div>
-              <h3 className="feature-title">Comodidad Total</h3>
-              <p className="feature-text">
-                Cabañas equipadas con todo lo que necesitas
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">✨</div>
-              <h3 className="feature-title">Bienestar</h3>
-              <p className="feature-text">
-                Espacios pensados para tu paz y renovación
-              </p>
-            </div>
+          <div className="navbar-logo">
+            <img src="/img/logo/logo_transparente.png" alt="Blanco Escalada" />
           </div>
-        </div>
-      </section>
-
-      {/* Image Gallery Preview */}
-      <section className="gallery-preview">
-        <div className="gallery-grid">
-          <div className="gallery-item gallery-item-large">
-            <div className="gallery-placeholder">
-              <span>Montaña al atardecer</span>
-            </div>
-          </div>
-          <div className="gallery-item">
-            <div className="gallery-placeholder">
-              <span>Cabaña</span>
-            </div>
-          </div>
-          <div className="gallery-item">
-            <div className="gallery-placeholder">
-              <span>Río</span>
-            </div>
-          </div>
-          <div className="gallery-item">
-            <div className="gallery-placeholder">
-              <span>Interior</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <div className="container">
-          <h2 className="section-title">Experiencias que Inspiran</h2>
           
-          <div className="testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-text">
-                "Un lugar mágico para desconectar. Las cabañas son hermosas y la vista 
-                a las montañas es simplemente espectacular. Volveremos sin dudas."
+          <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#cabanas">Cabañas</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#actividades">Actividades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Hero Carousel Full Width */}
+      <section className="hero" id="inicio">
+        <div className="carousel">
+          {heroImages.map((img, index) => (
+            <div
+              key={index}
+              className={`carousel-slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${img})` }}
+            />
+          ))}
+          <div className="carousel-overlay">
+            <div className="hero-content">
+              <h1 className="hero-title">Blanco Escalada</h1>
+              <p className="hero-subtitle">
+                Tu refugio en la montaña
               </p>
-              <p className="testimonial-author">— María & Carlos</p>
-            </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-text">
-                "Perfecto para familias. Nuestros hijos disfrutaron del río y nosotros 
-                del descanso. La atención fue excepcional."
+              <p className="hero-description">
+                Desconéctate del mundo y reconéctate contigo mismo en nuestras cabañas 
+                junto al río, rodeadas de montañas y naturaleza pura.
               </p>
-              <p className="testimonial-author">— Familia González</p>
+              <button className="cta-button">Descubre nuestras cabañas</button>
             </div>
-            
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-text">
-                "El retiro de mujeres fue una experiencia transformadora. El entorno 
-                natural y la paz del lugar crearon el ambiente perfecto."
-              </p>
-              <p className="testimonial-author">— Andrea L.</p>
-            </div>
+          </div>
+          <button className="carousel-btn prev" onClick={prevSlide}>‹</button>
+          <button className="carousel-btn next" onClick={nextSlide}>›</button>
+          <div className="carousel-dots">
+            {heroImages.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === currentSlide ? 'active' : ''}`}
+                onClick={() => setCurrentSlide(index)}
+              />
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
-      <section className="location-section">
+      {/* Descripción del Establecimiento */}
+      <section className="description-section">
         <div className="container">
-          <h2 className="section-title">Cómo Llegar</h2>
-          <p className="section-description">
-            Ubicados en el corazón de la montaña, a solo unos kilómetros de la ciudad.
-          </p>
-          
-          <div className="location-content">
-            <div className="map-placeholder">
-              <div className="map-container">
-                <p>📍 Mapa de ubicación</p>
-                <p className="map-note">Integración con Google Maps</p>
+          <div className="description-content">
+            <h2 className="section-title">Blanco Escalada</h2>
+            
+            <div className="description-features">
+              <div className="feature-item">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 12L5 10L7 12L10 8L12 10L15 6L18 9L21 6V20H3V12Z" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M3 20L6 17L9 20L12 16L15 19L18 15L21 18" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <p className="feature-label">Precordillera de Los Andes</p>
+              </div>
+              <div className="feature-item">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#000" strokeWidth="1.5"/>
+                  <path d="M8 12C8 12 9.5 14 12 14C14.5 14 16 12 16 12" stroke="#000" strokeWidth="1.5" strokeLinecap="round"/>
+                  <path d="M6 10C8 8 10 9 10 9M14 9C14 9 16 8 18 10" stroke="#000" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+                <p className="feature-label">Río Mendoza</p>
+              </div>
+              <div className="feature-item">
+                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <p className="feature-label">26 km de Mendoza</p>
               </div>
             </div>
-            
-            <div className="location-info">
-              <h3 className="location-title">Información de Acceso</h3>
-              <ul className="location-list">
-                <li>🚗 Acceso por ruta pavimentada</li>
-                <li>⏱️ A 45 minutos de la ciudad</li>
-                <li>🅿️ Estacionamiento disponible</li>
-                <li>📶 Señal de celular disponible</li>
-              </ul>
-              <button className="secondary-button">Ver direcciones completas</button>
-            </div>
+
+            <p className="description-text">
+              Descubrí una escapada única en <strong>Las Compuertas, Luján de Cuyo</strong>, La Cuna Del 
+              Malbec, rodeada por la Precordillera de Los Andes y el Río Mendoza, a solo 26 km 
+              de la ciudad de Mendoza. Nuestras cabañas combinan descanso y naturaleza con 
+              propuestas de aventura y actividades al aire libre como caminatas, paseos junto al 
+              río y experiencias en contacto con el paisaje mendocino.
+            </p>
+            <p className="description-text">
+              Un lugar ideal para familias, parejas y encuentros de mujeres que buscan compartir 
+              momentos especiales, relajarse y reconectar en un entorno natural, seguro y lleno 
+              de energía.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Final Section */}
-      <section className="cta-section">
+      {/* Reseñas de Google */}
+      <section className="reviews-section">
         <div className="container">
-          <h2 className="cta-title">¿Listo para tu Escapada?</h2>
-          <p className="cta-text">
-            Reserva ahora y vive la experiencia Blanco Escalada
-          </p>
-          <button className="cta-button-large">Consultar Disponibilidad</button>
+          <h2 className="section-title">Reseñas de Google</h2>
+          <div className="reviews-carousel">
+            <button className="review-btn prev" onClick={prevReview}>‹</button>
+            
+            <div className="reviews-slider">
+              {reviews.map((review, index) => (
+                <div
+                  key={index}
+                  className={`review-card ${index === currentReview ? 'active' : ''} ${
+                    index === (currentReview + 1) % reviews.length ? 'next' : ''
+                  } ${
+                    index === (currentReview - 1 + reviews.length) % reviews.length ? 'prev' : ''
+                  }`}
+                >
+                  <div className="review-header">
+                    <div className="review-avatar">{review.avatar}</div>
+                    <div className="review-info">
+                      <p className="review-name">{review.name}</p>
+                      <div className="review-stars">{'★'.repeat(review.stars)}</div>
+                    </div>
+                  </div>
+                  <p className="review-text">"{review.text}"</p>
+                  <p className="review-date">{review.date}</p>
+                </div>
+              ))}
+            </div>
+            
+            <button className="review-btn next" onClick={nextReview}>›</button>
+          </div>
+          
+          <div className="review-dots">
+            {reviews.map((_, index) => (
+              <span
+                key={index}
+                className={`dot ${index === currentReview ? 'active' : ''}`}
+                onClick={() => setCurrentReview(index)}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ubicación Google Maps */}
+      <section className="location-section">
+        <div className="container">
+          <h2 className="section-title">Encontranos</h2>
+          <div className="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3977.4515770012026!2d-69.03243008169376!3d-33.04001476911882!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967de763a2a6b95d%3A0x78d605704f0fa872!2sCaba%C3%B1as%20Blancos%20Sue%C3%B1os%20De%20Encalada!5e0!3m2!1ses-419!2sus!4v1767622422602!5m2!1ses-419!2sus"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </section>
     </div>
