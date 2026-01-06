@@ -111,12 +111,13 @@
 /* ===== HERO CAROUSEL FULL WIDTH ===== */
 .hero {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 90px);
   position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
   margin-top: 90px;
+  z-index: 1;
 }
 
 .carousel {
@@ -376,6 +377,34 @@
   font-weight: 500;
 }
 
+/* Animación fade-in desde abajo */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.description-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #9E553A;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
 /* ===== REVIEWS SECTION ===== */
 .reviews-section {
   padding: 7rem 2rem;
@@ -395,7 +424,7 @@
   position: relative;
   width: 100%;
   height: 350px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .review-card {
@@ -411,6 +440,7 @@
   transition: all 0.5s ease;
   opacity: 0;
   pointer-events: none;
+  clip-path: inset(0 0 0 0);
 }
 
 .review-card.active {
@@ -418,20 +448,22 @@
   transform: translateX(-50%) scale(1);
   z-index: 2;
   pointer-events: auto;
+  clip-path: none;
 }
 
 .review-card.next,
 .review-card.prev {
-  opacity: 0.3;
+  opacity: 0.4;
   z-index: 1;
+  clip-path: inset(5% 0 5% 0);
 }
 
 .review-card.next {
-  transform: translateX(30%) scale(0.85);
+  transform: translateX(20%) scale(0.85);
 }
 
 .review-card.prev {
-  transform: translateX(-130%) scale(0.85);
+  transform: translateX(-120%) scale(0.85);
 }
 
 .review-btn {
@@ -550,7 +582,7 @@
 /* ===== LOCATION SECTION ===== */
 .location-section {
   padding: 7rem 2rem;
-  background-color: #FAF8F4;
+  background: #FAF8F4;
 }
 
 .section-description {

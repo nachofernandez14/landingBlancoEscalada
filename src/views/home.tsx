@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import Navbar from '../components/Navbar';
+import PromoButton from '../components/PromoButton';
 import './home.css';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentReview, setCurrentReview] = useState(0);
 
   const heroImages = [
@@ -86,28 +87,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="navbar-container">
-          <div className="navbar-menu-icon" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          
-          <div className="navbar-logo">
-            <img src="/img/logo/logo_transparente.png" alt="Blanco Escalada" />
-          </div>
-          
-          <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#cabanas">Cabañas</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#actividades">Actividades</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Carousel Full Width */}
       <section className="hero" id="inicio">
@@ -150,40 +130,33 @@ const Home = () => {
       <section className="description-section">
         <div className="container">
           <div className="description-content">
-            <h2 className="section-title">Blanco Escalada</h2>
+            
+            <h2 className="description-title">Blanco Escalada</h2>
+            
             
             <div className="description-features">
               <div className="feature-item">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 12L5 10L7 12L10 8L12 10L15 6L18 9L21 6V20H3V12Z" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M3 20L6 17L9 20L12 16L15 19L18 15L21 18" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src="/img/icons/mountain.png" alt="Montaña" className="feature-icon" />
                 <p className="feature-label">Precordillera de Los Andes</p>
               </div>
               <div className="feature-item">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#000" strokeWidth="1.5"/>
-                  <path d="M8 12C8 12 9.5 14 12 14C14.5 14 16 12 16 12" stroke="#000" strokeWidth="1.5" strokeLinecap="round"/>
-                  <path d="M6 10C8 8 10 9 10 9M14 9C14 9 16 8 18 10" stroke="#000" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+                <img src="/img/icons/river.png" alt="Río" className="feature-icon" />
                 <p className="feature-label">Río Mendoza</p>
               </div>
               <div className="feature-item">
-                <svg className="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+                <img src="/img/icons/city.png" alt="Ciudad" className="feature-icon" />
                 <p className="feature-label">26 km de Mendoza</p>
               </div>
             </div>
 
-            <p className="description-text">
+            <p className="description-text fade-in-up">
               Descubrí una escapada única en <strong>Las Compuertas, Luján de Cuyo</strong>, La Cuna Del 
               Malbec, rodeada por la Precordillera de Los Andes y el Río Mendoza, a solo 26 km 
               de la ciudad de Mendoza. Nuestras cabañas combinan descanso y naturaleza con 
               propuestas de aventura y actividades al aire libre como caminatas, paseos junto al 
               río y experiencias en contacto con el paisaje mendocino.
             </p>
-            <p className="description-text">
+            <p className="description-text fade-in-up" style={{animationDelay: '0.2s'}}>
               Un lugar ideal para familias, parejas y encuentros de mujeres que buscan compartir 
               momentos especiales, relajarse y reconectar en un entorno natural, seguro y lleno 
               de energía.
@@ -254,6 +227,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
+      <PromoButton />
     </div>
   );
 };
