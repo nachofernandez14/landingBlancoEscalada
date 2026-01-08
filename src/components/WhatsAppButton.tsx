@@ -3,7 +3,7 @@ import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
   const phoneNumber = '5492613001298';
-  const message = encodeURIComponent('¡Hola! Me gustaría obtener más información sobre las cabañas Blanco Escalada.');
+  const message = encodeURIComponent('¡Hola! Me gustaría obtener más información sobre las cabañas Blancos Sueños de Escalada.');
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
+import { ChefHat, Wifi, Flame, Waves, Trees, Bed, Clock, Gift, ThumbsUp, Smartphone, Flower, PartyPopper, Sparkles, Droplet } from 'lucide-react';
 import './cabañas.css';
 
 const Cabañas = () => {
@@ -155,7 +156,7 @@ const Cabañas = () => {
                   </ul>
 
                   <a 
-                    href={`https://wa.me/5492613001298?text=${encodeURIComponent(`¡Hola! Me interesa conocer más sobre Blanco Escalada.\n\nQuisiera consultar disponibilidad para la Cabaña ${cabin.name}.\n\n¿Podrían brindarme más información?`)}`}
+                    href={`https://wa.me/5492613001298?text=${encodeURIComponent(`¡Hola! Me interesa conocer más sobre Blancos Sueños de Escalada.\n\nQuisiera consultar disponibilidad para la Cabaña ${cabin.name}.\n\n¿Podrían brindarme más información?`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="cabin-cta"
@@ -175,19 +176,12 @@ const Cabañas = () => {
           <h2 className="services-title fade-in-up">Lo Que Ofrecemos</h2>
           <div className="services-grid">
             <div className="service-item fade-in-up">
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 12L12 17L22 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <ChefHat className="service-icon" strokeWidth={2} />
               <p className="service-label">Cocina equipada</p>
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.05s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-                <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
+              <Wifi className="service-icon" strokeWidth={2} />
               <p className="service-label">WIFI satelital</p>
             </div>
 
@@ -200,9 +194,7 @@ const Cabañas = () => {
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.15s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 13H8L10 17L14 7L16 13H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Flame className="service-icon" strokeWidth={2} />
               <p className="service-label">Galería con churrasquera</p>
             </div>
 
@@ -214,18 +206,12 @@ const Cabañas = () => {
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.25s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12C2 14 3 16 5 17C7 18 9 18 12 16C15 14 17 14 19 15C21 16 22 18 22 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="12" cy="10" r="2" stroke="currentColor" strokeWidth="2"/>
-              </svg>
+              <Droplet className="service-icon" strokeWidth={2} />
               <p className="service-label">Piscina</p>
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.3s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M2 17L12 22L22 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Trees className="service-icon" strokeWidth={2} />
               <p className="service-label">Parquizado</p>
             </div>
 
@@ -238,17 +224,12 @@ const Cabañas = () => {
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.4s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 12C2 14 3 16 5 17C7 18 9 18 12 16C15 14 17 14 19 15C21 16 22 18 22 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              <Waves className="service-icon" strokeWidth={2} />
               <p className="service-label">Bajada al Río Mendoza</p>
             </div>
 
             <div className="service-item fade-in-up" style={{animationDelay: '0.45s'}}>
-              <svg className="service-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="2"/>
-                <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="currentColor" strokeWidth="2"/>
-              </svg>
+              <Bed className="service-icon" strokeWidth={2} />
               <p className="service-label">Ropa de cama</p>
             </div>
 
@@ -273,23 +254,23 @@ const Cabañas = () => {
               <h3 className="promotion-subtitle">Beneficios Especiales</h3>
               <ul className="promotion-list">
                 <li className="promotion-item">
-                  <span className="promotion-icon">🌟</span>
+                  <Clock className="promotion-icon" strokeWidth={2} />
                   <span className="promotion-text"><strong>Cliente frecuente:</strong> 5ta visita gratis</span>
                 </li>
                 <li className="promotion-item">
-                  <span className="promotion-icon">🎁</span>
+                  <Gift className="promotion-icon" strokeWidth={2} />
                   <span className="promotion-text"><strong>Más de 2 visitas en el año:</strong> Participás por una estadía gratis a pasar el día en nuestras cabañas</span>
                 </li>
                 <li className="promotion-item">
-                  <span className="promotion-icon">💝</span>
+                  <ThumbsUp className="promotion-icon" strokeWidth={2} />
                   <span className="promotion-text"><strong>Recomendaciones:</strong> 15% de descuento en tu próxima visita</span>
                 </li>
                 <li className="promotion-item">
-                  <span className="promotion-icon">📱</span>
+                  <Smartphone className="promotion-icon" strokeWidth={2} />
                   <span className="promotion-text"><strong>Compartir tu experiencia en redes:</strong> 10% de descuento en tu próxima visita</span>
                 </li>
                 <li className="promotion-item">
-                  <span className="promotion-icon">🌸</span>
+                  <Flower className="promotion-icon" strokeWidth={2} />
                   <span className="promotion-text"><strong>Encuentros de Mujeres "Entre Nosotras":</strong> Participá con tu grupo por una estadía a pasar el día en nuestras cabañas</span>
                 </li>
               </ul>
@@ -301,11 +282,11 @@ const Cabañas = () => {
                 <h4 className="season-title">Temporada Baja</h4>
                 <ul className="promotion-list">
                   <li className="promotion-item">
-                    <span className="promotion-icon">🎊</span>
+                    <PartyPopper className="promotion-icon" strokeWidth={2} />
                     <span className="promotion-text"><strong>Noche extra de regalo</strong> quedándote 2 días</span>
                   </li>
                   <li className="promotion-item">
-                    <span className="promotion-icon">🎉</span>
+                    <Sparkles className="promotion-icon" strokeWidth={2} />
                     <span className="promotion-text"><strong>Fin de semana completo:</strong> Pagás sólo 1 día</span>
                   </li>
                 </ul>
@@ -315,7 +296,7 @@ const Cabañas = () => {
 
           <div className="promotion-cta-container fade-in-up" style={{animationDelay: '0.3s'}}>
             <a 
-              href={`https://wa.me/5492613001298?text=${encodeURIComponent('¡Hola! Me interesan las promociones de Blanco Escalada. ¿Podrían darme más información?')}`}
+              href={`https://wa.me/5492613001298?text=${encodeURIComponent('¡Hola! Me interesan las promociones de Blancos Sueños de Escalada. ¿Podrían darme más información?')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="promotion-cta"

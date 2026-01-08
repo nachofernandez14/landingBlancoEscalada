@@ -55,14 +55,14 @@ const Navbar = () => {
         
         <div className="navbar-logo">
           <Link to="/">
-            <img src="/img/logo/logo_transparente.png" alt="Blanco Escalada" />
+            <img src="/img/logo/logo_transparente.png" alt="Blancos Sueños de Escalada" />
           </Link>
         </div>
         
         <ul className={`navbar-links ${isMenuOpen ? 'active' : ''}`}>
           <li><Link to="/" className={activeSection === 'inicio' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Inicio</Link></li>
           <li><Link to="/cabanas" className={activeSection === 'cabanas' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Cabañas</Link></li>
-          <li><a href="#galeria" className={activeSection === 'galeria' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Galería</a></li>
+          <li><Link to="/galeria" className={activeSection === 'galeria' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Galería</Link></li>
           <li><Link to="/actividades" className={activeSection === 'actividades' ? 'active' : ''} onClick={() => setIsMenuOpen(false)}>Actividades</Link></li>
           
         </ul>

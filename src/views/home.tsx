@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import PromoButton from '../components/PromoButton';
 import './home.css';
+import SplitText from '../components/SplitText';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentReview, setCurrentReview] = useState(0);
+  const navigate = useNavigate();
 
   const heroImages = [
-    '/img/montanaYrio/1.jpg',
-    '/img/montanaYrio/5.jpg',
-    '/img/montanaYrio/10.jpg',
     '/img/nieve/nieve1.jpg',
     '/img/nieve/nieve5.jpg',
-    '/img/parquizado/1.jpg',
-    '/img/parquizado/10.jpg',
+    '/img/nieve/nieve11.jpg',
+    '/img/montanaYrio/1.jpg',
+    '/img/parquizado/6.jpg',
+    '/img/parquizado/11.jpg',
+    '/img/piscina/8.jpg',
   ];
 
   useEffect(() => {
@@ -101,7 +104,7 @@ const Home = () => {
           ))}
           <div className="carousel-overlay">
             <div className="hero-content">
-              <h1 className="hero-title">Blanco Escalada</h1>
+              <h1 className="hero-title">Blancos Sueños de Escalada</h1>
               <p className="hero-subtitle">
                 Tu refugio en la montaña
               </p>
@@ -109,7 +112,10 @@ const Home = () => {
                 Desconéctate del mundo y reconéctate contigo mismo en nuestras cabañas 
                 junto al río, rodeadas de montañas y naturaleza pura.
               </p>
-              <button className="cta-button">Descubre nuestras cabañas</button>
+              <button className="cta-button" onClick={() => navigate('/cabanas')}>
+                Descubre nuestras cabañas
+              </button>
+              
             </div>
           </div>
           <button className="carousel-btn prev" onClick={prevSlide}>‹</button>
@@ -130,9 +136,14 @@ const Home = () => {
       <section className="description-section">
         <div className="container">
           <div className="description-content">
-            
-            <h2 className="description-title">Blanco Escalada</h2>
-            
+            <SplitText 
+              text="Blancos Sueños de Escalada"
+              tag="h2"
+              className="description-title"
+              splitType="chars"
+              delay={40}
+              duration={0.8}
+            />
             
             <div className="description-features">
               <div className="feature-item">

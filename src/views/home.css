@@ -28,7 +28,7 @@
 .navbar-container {
   max-width: 100%;
   margin: 0 auto;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,12 +111,12 @@
 /* ===== HERO CAROUSEL FULL WIDTH ===== */
 .hero {
   width: 100%;
-  height: calc(100vh - 90px);
+  height: 100vh;
   position: relative;
   overflow: hidden;
   margin: 0;
   padding: 0;
-  margin-top: 90px;
+  padding-top: 130px;
   z-index: 1;
 }
 
@@ -291,7 +291,12 @@
 /* ===== DESCRIPTION SECTION ===== */
 .description-section {
   padding: 7rem 2rem;
-  background: linear-gradient(135deg, #FAF8F4 0%, #F5F1EB 100%);
+  background-image: 
+    linear-gradient(135deg, rgba(250, 248, 244, 0.60) 0%, rgba(245, 241, 235, 0.70) 100%),
+    url('/img/montanaYrio/15.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .container {
@@ -365,16 +370,17 @@
 .description-text {
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
-  font-weight: 300;
-  color: #5a5a5a;
+  font-weight: 400;
+  color: #2a2a2a;
   line-height: 2;
   margin-bottom: 1.8rem;
   text-align: justify;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 .description-text strong {
   color: #9E553A;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Animación fade-in desde abajo */
@@ -403,6 +409,7 @@
   letter-spacing: 1px;
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 /* ===== REVIEWS SECTION ===== */
@@ -433,7 +440,8 @@
   max-width: 700px;
   left: 50%;
   transform: translateX(-50%) scale(0.85);
-  background: #FAF8F4;
+  background: rgba(250, 248, 244, 0.95);
+  backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 20px;
   box-shadow: 0 6px 25px rgba(158, 85, 58, 0.1);
@@ -582,7 +590,12 @@
 /* ===== LOCATION SECTION ===== */
 .location-section {
   padding: 7rem 2rem;
-  background: #FAF8F4;
+  background-image: 
+    linear-gradient(135deg, rgba(250, 248, 244, 0.93) 0%, rgba(245, 241, 235, 0.96) 100%),
+    url('/img/parquizado/8.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .section-description {
@@ -1028,12 +1041,6 @@
   padding: 2.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(158, 85, 58, 0.08);
-  transition: all 0.4s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(158, 85, 58, 0.12);
 }
 
 .review-stars {
