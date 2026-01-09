@@ -193,13 +193,13 @@
 
 /* ===== ENTRE NOSOTRAS SECTION ===== */
 .entre-nosotras-section {
-  padding: 5rem 2rem;
+  padding: 2rem;
   background: linear-gradient(135deg, #9E553A 0%, #B87333 100%);
   color: rgb(255, 255, 255);
 }
 
 .entre-nosotras-content {
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
@@ -217,33 +217,51 @@
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 400;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   color: #F5F1EB;
 }
 
 .entre-nosotras-description {
   font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
-  line-height: 1.9;
+  line-height: 1.6;
   color: #F5F1EB;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   text-align: center;
+}
+
+.entre-nosotras-video {
+  width: 100%;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.entre-nosotras-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .entre-nosotras-highlight {
   background: rgba(250, 248, 244, 0.1);
   border-radius: 12px;
-  padding: 2rem;
-  margin: 3rem 0;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
   border-left: 4px solid #FAF8F4;
 }
 
 .entre-nosotras-highlight p {
   font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #F5F1EB;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .entre-nosotras-highlight p:last-child {
@@ -255,7 +273,7 @@
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
-  margin: 3rem 0 2rem;
+  margin: 2rem 0 1.5rem;
   color: #FAF8F4;
 }
 

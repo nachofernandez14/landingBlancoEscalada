@@ -60,7 +60,23 @@ const Galeria = () => {
       type: 'video' as const,
       src: `/videos/cabañas/${video}`,
       category: 'cabañas'
-    }))
+    })),
+
+    // Videos de parquizado
+    ...['v5.mp4'].map(video => ({
+      type: 'video' as const,
+      src: `/videos/parquizado/${video}`,
+      category: 'naturaleza'
+    })),
+
+    // Videos de piscina
+    ...['v4.mp4'].map(video => ({
+      type: 'video' as const,
+      src: `/videos/piscina/${video}`,
+      category: 'naturaleza'
+    })),
+
+    
   ];
 
   const categories = [

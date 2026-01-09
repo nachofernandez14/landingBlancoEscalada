@@ -135,6 +135,14 @@ const Actividades = () => {
             y recordar nuestra esencia. Un encuentro para volver a vos, nutrirte y disfrutar.
           </p>
 
+          <div className="entre-nosotras-video fade-in-up" style={{animationDelay: '0.35s'}}>
+            <video controls>
+              <source src="/videos/cabañas/v1.mov" type="video/quicktime" />
+              <source src="/videos/cabañas/v1.mov" type="video/mp4" />
+              Tu navegador no soporta el elemento de video.
+            </video>
+          </div>
+
           <div className="entre-nosotras-highlight fade-in-up" style={{animationDelay: '0.4s'}}>
             <p>
               Estos encuentros pueden realizarse con tu grupo de mujeres o de manera individual con otras 

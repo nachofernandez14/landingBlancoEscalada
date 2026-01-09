@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>Blanco Escalada</h3>
+          <h3>Blanco Encalada</h3>
           <p>Tu refugio en la montaña. Descanso, naturaleza y bienestar en el Valle de Uco.</p>
         </div>
 

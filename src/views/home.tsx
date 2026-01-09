@@ -11,10 +11,11 @@ const Home = () => {
   const navigate = useNavigate();
 
   const heroImages = [
+    '/img/piscina/26.jpg',
+    '/img/piscina/46.jpg',
     '/img/nieve/nieve1.jpg',
-    '/img/nieve/nieve5.jpg',
-    '/img/nieve/nieve11.jpg',
     '/img/montanaYrio/1.jpg',
+    '/img/montanaYrio/4.jpg',
     '/img/parquizado/6.jpg',
     '/img/parquizado/11.jpg',
     '/img/piscina/8.jpg',
@@ -104,7 +105,7 @@ const Home = () => {
           ))}
           <div className="carousel-overlay">
             <div className="hero-content">
-              <h1 className="hero-title">Blancos Sueños de Escalada</h1>
+              <h1 className="hero-title">Blancos Sueños de Encalada</h1>
               <p className="hero-subtitle">
                 Tu refugio en la montaña
               </p>
