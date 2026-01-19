@@ -1,0 +1,409 @@
+/* ===== ACTIVIDADES PAGE ===== */
+.actividades-page {
+  padding-top: 130px;
+  background: #FAF8F4;
+}
+
+/* ===== HERO SECTION ===== */
+.actividades-hero {
+  height: 50vh;
+  min-height: 350px;
+  background: linear-gradient(135deg, #C46A4A 0%, #B87333 50%, #9E553A 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.actividades-hero-content {
+  max-width: 900px;
+}
+
+.actividades-hero-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: #FAF8F4;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.actividades-hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  color: #F5F1EB;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #EDE6D8 0%, #DCCFC1 100%);
+}
+
+.intro-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* ===== ACTIVITIES SECTION ===== */
+.activities-section {
+  padding: 5rem 2rem;
+  background-image: 
+    linear-gradient(135deg, rgba(250, 248, 244, 0.70) 0%, rgba(245, 241, 235, 0.80) 100%),
+    url('/img/nieve/nieve3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.activities-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: #9E553A;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.activity-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(158, 85, 58, 0.12);
+  transition: all 0.4s ease;
+  text-align: center;
+  border: 1px solid rgba(220, 207, 193, 0.3);
+}
+
+.activity-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(158, 85, 58, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(196, 106, 74, 0.3);
+}
+
+.activity-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  color: #C46A4A;
+}
+
+.activity-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #9E553A;
+  margin: 0;
+}
+
+/* ===== EXCURSIONS SECTION ===== */
+.excursions-section {
+  padding: 5rem 2rem;
+  background-color: #DCCFC1;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.excursions-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 600;
+  color: #9E553A;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.5px;
+}
+
+.excursions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.excursion-card {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 4px 20px rgba(158, 85, 58, 0.12);
+  transition: all 0.4s ease;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(220, 207, 193, 0.3);
+}
+
+.excursion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(158, 85, 58, 0.2);
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(196, 106, 74, 0.4);
+}
+
+.excursion-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  color: #C46A4A;
+}
+
+.excursion-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #9E553A;
+  margin: 0;
+}
+
+/* ===== ENTRE NOSOTRAS SECTION ===== */
+.entre-nosotras-section {
+  padding: 2rem;
+  background: linear-gradient(135deg, #9E553A 0%, #B87333 100%);
+  color: rgb(255, 255, 255);
+}
+
+.entre-nosotras-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.entre-nosotras-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.entre-nosotras-subtitle {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #F5F1EB;
+}
+
+.entre-nosotras-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #F5F1EB;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.entre-nosotras-video {
+  width: 100%;
+  max-width: 700px;
+  margin: 1.5rem auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.entre-nosotras-video video {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.entre-nosotras-highlight {
+  background: rgba(250, 248, 244, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid #FAF8F4;
+}
+
+.entre-nosotras-highlight p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #F5F1EB;
+  margin-bottom: 0.8rem;
+}
+
+.entre-nosotras-highlight p:last-child {
+  margin-bottom: 0;
+}
+
+.offerings-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: #FAF8F4;
+}
+
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.offering-item {
+  background: rgba(250, 248, 244, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.offering-item:hover {
+  background: rgba(250, 248, 244, 0.25);
+  transform: translateY(-3px);
+}
+
+.offering-icon {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto 0.8rem;
+  color: #FAF8F4;
+}
+
+.offering-name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #FAF8F4;
+  margin: 0;
+}
+
+.entre-nosotras-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.entre-nosotras-button {
+  display: inline-block;
+  padding: 1.2rem 3rem;
+  background: white;
+  color: #9E553A;
+  text-decoration: none;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.entre-nosotras-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  background: #FAF8F4;
+}
+
+/* ===== ANIMATIONS ===== */
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .actividades-page {
+    padding-top: 75px;
+  }
+
+  .actividades-hero {
+    min-height: 300px;
+  }
+
+  .activities-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .excursions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .offerings-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .intro-section,
+  .activities-section,
+  .excursions-section,
+  .entre-nosotras-section {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .activities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .excursions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .offerings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .activity-card,
+  .excursion-card,
+  .offering-item {
+    padding: 1.5rem;
+  }
+}
